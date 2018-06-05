@@ -8,14 +8,15 @@ var radioObj;
 var intervalId;
 var totalQuestions = 0;
 
-var questions = [q1, q2, q3, q4, q5, q6]
+var questions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20]
 
 var startGame = function() {
     q1();
     currentQ = 1;
-    timeLeft = 60;
+    timeLeft = 5;
     correctAnswers = 0;
     wrongAnswers = 0;
+    totalQuestions = 0;
     $('#numbercorrect').text(correctAnswers);
     $('#numberincorrect').text(wrongAnswers);
     $('#homer').text("Any key? Which one's the any key?");
@@ -35,6 +36,10 @@ function endGame() {
         "<h4>Press Start to Try Again!</h4>" +
         "</center>"
     )
+    $('#anykey').trigger('play');
+    $('#homer').text("Any key? Which one's the any key?");
+    $('#homerface').html("<img src='assets/images/homerthink2.jpg'>");
+    
 }
 
 function timer() {
